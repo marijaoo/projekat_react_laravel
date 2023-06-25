@@ -8,6 +8,8 @@
 @import "navMenuDesktop.css";
 @import "navMenuMobile.css";
 @import "typo.css";
+@import "responsive.css";
+@import "megaMenuAll.css";
 
 body {
     background-color: rgb(255, 255, 255);

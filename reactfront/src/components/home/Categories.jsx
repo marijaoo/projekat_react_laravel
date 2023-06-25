@@ -13,7 +13,7 @@ class Categories extends Component {
           <Row>
 
 
-               <Col key={1} xl={6} lg={6} md={2} sm={12} xs={12}>
+               <Col key={1} xl={6} lg={6} md={12} sm={12} xs={12}>
                     <Row>
            <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
           <Card className="h-100 w-100 text-center">          
@@ -58,7 +58,7 @@ class Categories extends Component {
 
 
 
-               <Col key={1} xl={6} lg={6} md={2} sm={12} xs={12}>
+               <Col key={1} xl={6} lg={6} md={12} sm={12} xs={12}>
                     <Row>
            <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
           <Card className="h-100 w-100 text-center">          
@@ -108,7 +108,7 @@ class Categories extends Component {
           <Row>
 
 
-               <Col key={1} xl={6} lg={6} md={2} sm={12} xs={12}>
+               <Col key={1} xl={6} lg={6} md={12} sm={12} xs={12}>
                     <Row>
            <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
           <Card className="h-100 w-100 text-center">          
@@ -153,7 +153,7 @@ class Categories extends Component {
 
 
 
-               <Col key={1} xl={6} lg={6} md={2} sm={12} xs={12}>
+               <Col key={1} xl={6} lg={6} md={12} sm={12} xs={12}>
                     <Row>
            <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
           <Card className="h-100 w-100 text-center">          
