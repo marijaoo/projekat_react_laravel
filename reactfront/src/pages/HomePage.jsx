@@ -11,6 +11,12 @@ import HomeTopMobile from '../components/home/HomeTopMobile'
 import NewArrival from '../components/home/NewArrival'
 
 export class HomePage extends Component {
+
+    //go to the top of the page
+    componentDidMount(){
+    window.scroll(0,0)
+    }
+
      render() { 
           return (   
                <Fragment> 

@@ -3,15 +3,13 @@ import FooterDesktop from '../components/common/FooterDesktop'
 import FooterMobile from '../components/common/FooterMobile'
 import NavMenuDesktop from '../components/common/NavMenuDesktop'
 import NavMenuMobile from '../components/common/NavMenuMobile'
-import UserLogin from '../components/common/UserLogin'
+import ProductDetails from '../components/ProductDetails/ProductDetails'
+import SuggestedProduct from '../components/ProductDetails/SuggestedProduct'
 
-
-class UserLoginPage extends Component {
-
-        //go to the top of the page
-        componentDidMount(){
-            window.scroll(0,0)
-        }
+class ProductDetailsPage extends Component {
+     componentDidMount(){
+          window.scroll(0,0)
+     }
 
      render() {
           return (
@@ -24,7 +22,8 @@ class UserLoginPage extends Component {
                <NavMenuMobile />  
                </div>                       
 
-               <UserLogin /> 
+               <ProductDetails /> 
+               <SuggestedProduct/>
 
                <div className="Desktop">
                <FooterDesktop/>
@@ -39,4 +38,4 @@ class UserLoginPage extends Component {
      }
 }
 
-export default UserLoginPage
+export default ProductDetailsPage

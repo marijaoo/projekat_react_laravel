@@ -1,21 +1,18 @@
 import React, { Component, Fragment } from 'react'
+import Favourite from '../components/Favourite/Favourite'
 import FooterDesktop from '../components/common/FooterDesktop'
 import FooterMobile from '../components/common/FooterMobile'
 import NavMenuDesktop from '../components/common/NavMenuDesktop'
 import NavMenuMobile from '../components/common/NavMenuMobile'
-import UserLogin from '../components/common/UserLogin'
 
-
-class UserLoginPage extends Component {
-
-        //go to the top of the page
-        componentDidMount(){
-            window.scroll(0,0)
-        }
+class FavouritePage extends Component {
+     componentDidMount(){
+          window.scroll(0,0)
+     }
 
      render() {
           return (
-               <Fragment> 
+              <Fragment> 
                <div className="Desktop">
                 <NavMenuDesktop /> 
                </div>
@@ -24,7 +21,7 @@ class UserLoginPage extends Component {
                <NavMenuMobile />  
                </div>                       
 
-               <UserLogin /> 
+               <Favourite /> 
 
                <div className="Desktop">
                <FooterDesktop/>
@@ -39,4 +36,4 @@ class UserLoginPage extends Component {
      }
 }
 
-export default UserLoginPage
+export default FavouritePage

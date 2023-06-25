@@ -3,15 +3,13 @@ import FooterDesktop from '../components/common/FooterDesktop'
 import FooterMobile from '../components/common/FooterMobile'
 import NavMenuDesktop from '../components/common/NavMenuDesktop'
 import NavMenuMobile from '../components/common/NavMenuMobile'
-import UserLogin from '../components/common/UserLogin'
+import Notification from '../components/Notification/Notification'
 
+class NotificationPage extends Component {
 
-class UserLoginPage extends Component {
-
-        //go to the top of the page
-        componentDidMount(){
-            window.scroll(0,0)
-        }
+     componentDidMount(){
+          window.scroll(0,0)
+     }
 
      render() {
           return (
@@ -24,7 +22,7 @@ class UserLoginPage extends Component {
                <NavMenuMobile />  
                </div>                       
 
-               <UserLogin /> 
+               <Notification /> 
 
                <div className="Desktop">
                <FooterDesktop/>
@@ -39,4 +37,4 @@ class UserLoginPage extends Component {
      }
 }
 
-export default UserLoginPage
+export default NotificationPage
