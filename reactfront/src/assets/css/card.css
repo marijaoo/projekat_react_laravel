@@ -21,6 +21,7 @@
     position: relative;
     margin: auto;
     overflow: hidden;
+    height: 250px !important;
     width: 100% !important;
 }
 
@@ -32,7 +33,7 @@
 }
 
 .image-box:hover img {
-    transform: scale(1.05);
+    transform: scale(0.9);
 }
 
 .center {
