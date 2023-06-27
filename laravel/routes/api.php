@@ -9,3 +9,4 @@ use App\Http\Controllers\Admin\VisitorController;
 // });
 
 Route::get('/getvisitor', [VisitorController::class, 'GetVisitorDetails']);
+Route::post('/postcontact', [ContactController::class, 'PostContactDetails']);
