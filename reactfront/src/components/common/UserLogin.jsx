@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Container,Row,Col, Form,Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import Login from '../../assets/images/login.png'
 class UserLogin extends Component {
      render() {
@@ -13,9 +14,14 @@ class UserLogin extends Component {
         <Col className="d-flex justify-content-center" md={6} lg={6} sm={12} xs={12}>
           <Form className="onboardForm">
                <h4 className="section-title-login"> USER SING IN </h4>
-               <h6 className="section-sub-title">Please Enter Your Mobile Number</h6>
-               <input className="form-control m-2" type="text" placeholder="Enter Mobile Number" />
-               <Button className="btn btn-block m-2 site-btn-login"> Next </Button>
+              
+               <input className="form-control m-2" type="email" placeholder="Enter Your Email" />
+               <input className="form-control m-2" type="password" placeholder="Enter Your password" />
+               <Button className="btn btn-block m-2 site-btn-login"> Login </Button>
+               <br></br> <br></br>
+                <hr />
+               <p> <b> Forgot Your Password? </b><Link to="/forget"><b> Password Reset </b> </Link> </p>
+
                
           </Form>
 
