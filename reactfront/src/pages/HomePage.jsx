@@ -10,11 +10,20 @@ import HomeTop from '../components/home/HomeTop'
 import HomeTopMobile from '../components/home/HomeTopMobile'
 import NewArrival from '../components/home/NewArrival'
 
+import AppURL from '../api/AppURL'
+import axios from 'axios';
+
+
 export class HomePage extends Component {
 
     //go to the top of the page
     componentDidMount(){
-    window.scroll(0,0)
+     window.scroll(0,0);
+     this.GetVisitorDetails();
+    }
+
+    GetVisitorDetails=()=>{
+     axios.get(AppURL.VisitorDetails).then().catch();
     }
 
      render() { 
