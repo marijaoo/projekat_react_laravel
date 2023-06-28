@@ -1,49 +1,61 @@
 import React, { Component, Fragment } from 'react'
-import { Route, Routes} from 'react-router';
-import HomePage from '../pages/HomePage';
-import UserLoginPage from '../pages/UserLoginPage';
-import ContactPage from '../pages/ContactPage';
-import PurchasePage from '../pages/PurchasePage';
-import PrivacyPage from '../pages/PrivacyPage';
-import RefundPage from '../pages/RefundPage';
-import ProductDetailsPage from '../pages/ProductDetailsPage';
-import FavouritePage from '../pages/FavouritePage';
-import NotificationPage from '../pages/NotificationPage';
-import CartPage from '../pages/CartPage';
+import { Router, Route, Switch } from "react-router";
 import AboutPage from '../pages/AboutPage';
+import CartPage from '../pages/CartPage';
+import ContactPage from '../pages/ContactPage';
+import FavouritePage from '../pages/FavouritePage';
+import HomePage from '../pages/HomePage';
+import NotificationPage from '../pages/NotificationPage';
+import PrivacyPage from '../pages/PrivacyPage';
+import ProductCategoryPage from '../pages/ProductCategoryPage';
+import ProductDetailsPage from '../pages/ProductDetailsPage';
+import ProductSubCategoryPage from '../pages/ProductSubCategoryPage';
+import PurchasePage from '../pages/PurchasePage';
+import RefundPage from '../pages/RefundPage';
+import SearchPage from '../pages/SearchPage';
+import UserLoginPage from '../pages/UserLoginPage';
 
 class AppRoute extends Component {
-  render() {
-    return <div>
-        
-        
-            <Routes>
-                 <Route path="/" element={<HomePage/>}></Route>
-                 <Route path="/login" element={<UserLoginPage/>}></Route>
-                 <Route path="/contact" element={<ContactPage/>}></Route>
-                 
-                 <Route path="/purchase" element={<PurchasePage/>}></Route>
-                 <Route path="/privacy" element={<PrivacyPage/>}></Route>
-                 <Route path="/refund" element={<RefundPage/>}></Route>
-                 <Route path="/about" element={<AboutPage/>}></Route>
+     render() {
+          return (
+     <Fragment>
+          <Switch>
+               
 
-                 <Route path="/productdetails" element={<ProductDetailsPage/>}></Route>
+ <Route exact path="/" render={(props) => <HomePage {...props} key={Date.now()} /> } />
 
-                 <Route path="/favourite" element={<FavouritePage/>}></Route>
-                 <Route path="/notification" element={<NotificationPage/>}></Route>
+ <Route exact path="/login" render={(props) => <UserLoginPage {...props} key={Date.now()} /> } />
+ 
+ <Route exact path="/contact" render={(props) => <ContactPage {...props} key={Date.now()} /> } />
 
-                 <Route path="/cart" element={<CartPage/>}></Route>
+ <Route exact path="/purchase" render={(props) => <PurchasePage {...props} key={Date.now()} /> } />
 
+ <Route exact path="/privacy" render={(props) => <PrivacyPage {...props} key={Date.now()} /> } /> 
 
+ <Route exact path="/refund" render={(props) => <RefundPage {...props} key={Date.now()} /> } />
 
-            </Routes>
+ <Route exact path="/about" render={(props) => <AboutPage {...props} key={Date.now()} /> } />
 
-        
+ <Route exact path="/productdetails/:code" render={(props) => <ProductDetailsPage {...props} key={Date.now()} /> } />
 
+ <Route exact path="/notification" render={(props) => <NotificationPage {...props} key={Date.now()} /> } />
 
-    </div>
-    
-  }
+ <Route exact path="/favourite" render={(props) => <FavouritePage {...props} key={Date.now()} /> } />
+
+ <Route exact path="/cart" render={(props) => <CartPage {...props} key={Date.now()} /> } />
+
+ <Route exact path="/productcategory/:category" render={(props) => <ProductCategoryPage {...props} key={Date.now()} /> } />
+
+ <Route exact path="/productsubcategory/:category/:subcategory" render={(props) => <ProductSubCategoryPage {...props} key={Date.now()} /> } /> 
+
+ <Route exact path="/productbysearch/:searchkey" render={(props) => <SearchPage {...props} key={Date.now()} /> } /> 
+                  
+
+          </Switch>
+
+     </Fragment>
+          )
+     }
 }
 
 export default AppRoute
