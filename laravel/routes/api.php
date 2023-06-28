@@ -9,6 +9,11 @@ use App\Http\Controllers\Admin\ProductListController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ProductDetailsController;
 use App\Http\Controllers\Admin\NotificationController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ForgetController;
+use App\Http\Controllers\ResetController;
+use App\Http\Controllers\UserController;
+
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
@@ -25,3 +30,10 @@ Route::get('/allslider', [SliderController::class, 'AllSlider']);
 Route::get('/productdetails/{id}', [ProductDetailsController::class, 'ProductDetails']);
 Route::get('/notification', [NotificationController::class, 'NotificationHistory']);
 Route::get('/search/{key}', [ProductListController::class, 'ProductBySearch']);
+
+//Laravel Passport
+Route::post('/login', [AuthController::class, 'Login']);
+Route::post('/register', [AuthController::class, 'Register']);
+Route::post('/forgetpassword', [ForgetController::class, 'ForgetPassword']);
+Route::post('/resetpassword', [ResetController::class, 'ResetPassword']);
+Route::get('/user', [UserController::class, 'User'])->middleware('auth:api');
