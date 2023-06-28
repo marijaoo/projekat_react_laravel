@@ -18,7 +18,10 @@ class AppURL{
         return this.BaseURL + "/productlistbysubcategory/" + category + "/" + subcategory;
     }
 
- static AllSlider = this.BaseURL + "/allslider"
+ static AllSlider = this.BaseURL + "/allslider";
+    static ProductDetails(code) {
+        return this.BaseURL + "/productdetails/" + code;
+    }
 
 }
 
