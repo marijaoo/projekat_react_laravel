@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\VisitorController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\SiteInfoController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductListController;
@@ -13,6 +14,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ForgetController;
 use App\Http\Controllers\ResetController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReviewController;
+
 
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -30,6 +33,8 @@ Route::get('/allslider', [SliderController::class, 'AllSlider']);
 Route::get('/productdetails/{id}', [ProductDetailsController::class, 'ProductDetails']);
 Route::get('/notification', [NotificationController::class, 'NotificationHistory']);
 Route::get('/search/{key}', [ProductListController::class, 'ProductBySearch']);
+Route::get('/similar/{subcategory}', [ProductListController::class, 'SimilarProduct']);
+Route::get('/reviewlist/{id}', [ReviewController::class, 'ReviewList']);
 
 //Laravel Passport
 Route::post('/login', [AuthController::class, 'Login']);
