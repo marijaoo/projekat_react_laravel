@@ -11,13 +11,15 @@ import FavouritePage from '../pages/FavouritePage';
 import NotificationPage from '../pages/NotificationPage';
 import CartPage from '../pages/CartPage';
 import AboutPage from '../pages/AboutPage';
+import ProductCategoryPage from '../pages/ProductCategoryPage';
+import ProductSubCategoryPage from '../pages/ProductSubCategoryPage';
 
 class AppRoute extends Component {
   render() {
     return <div>
-        
-        
+      
             <Routes>
+
                  <Route path="/" element={<HomePage/>}></Route>
                  <Route path="/login" element={<UserLoginPage/>}></Route>
                  <Route path="/contact" element={<ContactPage/>}></Route>
@@ -34,12 +36,10 @@ class AppRoute extends Component {
 
                  <Route path="/cart" element={<CartPage/>}></Route>
 
-
+                 <Route exact path="/productcategory/:category" component={ProductCategoryPage} />
+                 <Route exact path="/productsubcategory/:category/:subcategory" component={ProductSubCategoryPage} />
 
             </Routes>
-
-        
-
 
     </div>
     

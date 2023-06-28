@@ -1,22 +1,33 @@
 @media (max-width: 374.98px) {
-  .Mobile {
+
+  .slider-img {
+    width: 100% !important;
+    height: 226px;
   }
+
+  .Mobile {}
+
   .Desktop {
     display: none;
   }
 }
 
 @media (min-width: 375.98px) and (max-width: 575.98px) {
-  .Mobile {
+  .slider-img {
+    width: 100% !important;
+    height: 226px;
   }
+
+  .Mobile {}
+
   .Desktop {
     display: none;
   }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .Mobile {
-  }
+  .Mobile {}
+
   .Desktop {
     display: none;
   }
@@ -26,22 +37,22 @@
   .Mobile {
     display: none;
   }
-  .Desktop {
-  }
+
+  .Desktop {}
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .Mobile {
     display: none;
   }
-  .Desktop {
-  }
+
+  .Desktop {}
 }
 
 @media (min-width: 1200px) {
   .Mobile {
     display: none;
   }
-  .Desktop {
-  }
+
+  .Desktop {}
 }
