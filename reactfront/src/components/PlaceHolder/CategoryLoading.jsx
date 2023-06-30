@@ -8,9 +8,9 @@ class CategoryLoading extends Component {
             <div className={isLoading}>
 
                 <Container className="text-center" fluid={true}>
-                    <div className="section-title text-center mb-55"><h2> CATEGORIES</h2>
-                        <p>Some Of Our Exclusive Collection, You May Like</p>
-                    </div>
+                    <div className="section-title text-center mb-55"><h2> Kategorije</h2>
+          <p>Odaberi kategoriju proizvoda koju želiš detaljnije da istražiš</p>
+          </div>
 
                     <div className="row">
 

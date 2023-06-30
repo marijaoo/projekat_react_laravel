@@ -23,7 +23,7 @@ class RefundPage extends Component {
                </div>                       
 
                <Refund /> 
-
+               
                <div className="Desktop">
                <FooterDesktop/>
                </div>
@@ -31,7 +31,7 @@ class RefundPage extends Component {
                <div className="Mobile">
                <FooterMobile/>
                </div>
-
+               
           </Fragment>
           )
      }

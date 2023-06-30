@@ -23,7 +23,7 @@ class NotificationPage extends Component {
                </div>                       
 
                <Notification /> 
-
+               
                <div className="Desktop">
                <FooterDesktop/>
                </div>
@@ -31,7 +31,7 @@ class NotificationPage extends Component {
                <div className="Mobile">
                <FooterMobile/>
                </div>
-
+               
           </Fragment>
           )
      }

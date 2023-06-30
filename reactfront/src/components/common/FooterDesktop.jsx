@@ -75,12 +75,12 @@ export class FooterDesktop extends Component {
 </div>
 
           <div className={this.state.mainDiv}>
-               <h5 className="footer-menu-title">OFFICE ADDRESS</h5>
+               <h5 className="footer-menu-title">Adresa</h5>
 
                  { ReactHtmlParser(this.state.address) } 
                </div>
                
-               <h5 className="footer-menu-title">SOCIAL LINK</h5>
+               <h5 className="footer-menu-title">Društvene mreže</h5>
                <a href={this.state.facbook_link} target="_blank"><i className="fab m-1 h4 fa-facebook"></i></a>
                
                <a href={this.state.instagram_link} target="_blank"><i className="fab m-1 h4 fa-instagram"></i></a>
@@ -89,26 +89,24 @@ export class FooterDesktop extends Component {
           </Col>
 
           <Col className="p-2" lg={3} md={3} sm={6} xs={12}>
-          <h5 className="footer-menu-title">THE COMPANY</h5>
-          <Link to="/about" className="footer-link"> About Us</Link><br></br>
-          <Link to="/" className="footer-link"> Company Profile</Link><br></br>
-          <Link to="/contact" className="footer-link"> Contact Us</Link><br></br>
+          <h5 className="footer-menu-title">Web Prodavnica</h5>
+          <Link to="/about" className="footer-link"> O nama</Link><br></br>
+          <Link to="/contact" className="footer-link"> Kontakt</Link><br></br>
           </Col>
 
           <Col className="p-2" lg={3} md={3} sm={6} xs={12}>
-          <h5 className="footer-menu-title">MORE INFO</h5>
-          <Link to="/purchase" className="footer-link">How To Purchase</Link><br></br>
-          <Link to="/privacy" className="footer-link"> Privacy Policy</Link><br></br>
-          <Link to="/refund" className="footer-link"> Refund Policy </Link><br></br>
+          <h5 className="footer-menu-title">Više informacija</h5>
+          <Link to="/purchase" className="footer-link">Kako kupiti</Link><br></br>
+          <Link to="/privacy" className="footer-link"> Politika privatnosti</Link><br></br>
+          <Link to="/refund" className="footer-link"> Politika reklamacija </Link><br></br>
           </Col>
 
           <Col className="p-2" lg={3} md={3} sm={6} xs={12}>
-          <h5 className="footer-menu-title">DOWNLOAD APPS</h5>
+          <h5 className="footer-menu-title">Preuzmi aplikaciju za mobilni telefon!</h5>
           <a href={this.state.android_app_link} target="_blank"><img src={Google}  /></a><br></br>
           
           <a href={this.state.ios_app_link} target="_blank"><img className="mt-2" src={Apple}  /></a><br></br>
-          Change Your Language <br></br>
-          <div id="google_translate_element">  </div>
+          
           </Col>
 
      </Row>

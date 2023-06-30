@@ -9,9 +9,9 @@ class NewArrivalLoading extends Component {
             <div className={isLoading}>
 
                 <Container className="text-center" fluid={true}>
-                    <div className="section-title text-center mb-55"><h2>NEW ARRIVAL &nbsp;
+                    <div className="section-title text-center mb-55"><h2>Novo u ponudi &nbsp;
                     </h2>
-                        <p>Some Of Our Exclusive Collection, You May Like</p>
+                        <p>Najsvežija ponuda samo na našem sajtu!</p>
                     </div>
 
                     <div className="row">

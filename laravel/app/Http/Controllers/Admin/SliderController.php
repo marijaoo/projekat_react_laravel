@@ -10,7 +10,7 @@ class SliderController extends Controller
 {
     public function AllSlider()
     {
-        $result = HomeSlider::all();
+        $result = HomeSlider::all($columns = ['slider_image']);
         return $result;
     }
 }

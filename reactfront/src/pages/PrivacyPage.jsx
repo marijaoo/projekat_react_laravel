@@ -21,7 +21,7 @@ class PrivacyPage extends Component {
                </div>                       
 
                <Privacy /> 
-
+               
                <div className="Desktop">
                <FooterDesktop/>
                </div>
@@ -29,7 +29,7 @@ class PrivacyPage extends Component {
                <div className="Mobile">
                <FooterMobile/>
                </div>
-
+               
           </Fragment>
           )
      }

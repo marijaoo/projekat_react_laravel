@@ -7,12 +7,11 @@ import NavMenuMobile from '../components/common/NavMenuMobile'
 
 
 class ContactPage extends Component {
-
     //go to the top of the page
     componentDidMount(){
         window.scroll(0,0)
    }
-
+   
      render() {
           return (
                <Fragment> 
@@ -25,7 +24,7 @@ class ContactPage extends Component {
                </div>                       
 
                <Contact /> 
-
+               
                <div className="Desktop">
                <FooterDesktop/>
                </div>
@@ -33,7 +32,7 @@ class ContactPage extends Component {
                <div className="Mobile">
                <FooterMobile/>
                </div>
-
+               
           </Fragment>
           )
      }

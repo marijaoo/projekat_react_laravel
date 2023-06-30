@@ -22,7 +22,7 @@ class PurchasePage extends Component {
                </div>                       
 
                <Purchase /> 
-
+               
                <div className="Desktop">
                <FooterDesktop/>
                </div>
@@ -30,10 +30,10 @@ class PurchasePage extends Component {
                <div className="Mobile">
                <FooterMobile/>
                </div>
-
+               
           </Fragment>
           )
      }
 }
 
-export default PurchasePage 
+export default PurchasePage

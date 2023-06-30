@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react'
 import FooterDesktop from '../components/common/FooterDesktop'
 import FooterMobile from '../components/common/FooterMobile'
-import ForgetPassword from '../components/common/ForgetPassword'
 import NavMenuDesktop from '../components/common/NavMenuDesktop'
 import NavMenuMobile from '../components/common/NavMenuMobile'
+import ResetPassword from '../components/common/ResetPassword.jsx'
 
-class ForgetPasswordPage extends Component {
+
+class ResetPasswordPage extends Component {
 
      componentDidMount(){
           window.scroll(0,0)
@@ -13,7 +14,7 @@ class ForgetPasswordPage extends Component {
 
      render() {
           return (
-               <Fragment> 
+              <Fragment> 
                <div className="Desktop">
                 <NavMenuDesktop /> 
                </div>
@@ -22,7 +23,7 @@ class ForgetPasswordPage extends Component {
                <NavMenuMobile />  
                </div>                       
 
-               <ForgetPassword />  
+               <ResetPassword />  
 
                <div className="Desktop">
                <FooterDesktop/>
@@ -37,4 +38,4 @@ class ForgetPasswordPage extends Component {
      }
 }
 
-export default ForgetPasswordPage
+export default ResetPasswordPage

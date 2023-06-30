@@ -36,7 +36,9 @@ class ProductDetailsPage extends Component {
 
      render() {
 
-          if(this.state.mainDiv == "d-none"){
+          const User=this.props.user;
+
+          if(this.state.mainDiv === "d-none"){
 
                return (
                     <Fragment> 
@@ -76,7 +78,7 @@ class ProductDetailsPage extends Component {
                     <NavMenuMobile />  
                     </div>                       
      
-                    <ProductDetails data={this.state.ProductData} /> 
+                    <ProductDetails data={this.state.ProductData} user={User}/> 
                     
                     
                     <div className="Desktop">

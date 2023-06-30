@@ -19,7 +19,7 @@ class Profile extends Component {
 
           return (
               <Fragment>
-                   <h1> User Profile Page </h1>
+                   <h1> Profilna strana </h1>
 
                <ul className="list-group">
 <li className="list-group-item">Name :  {name} </li>

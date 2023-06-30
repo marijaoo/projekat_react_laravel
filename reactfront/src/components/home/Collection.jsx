@@ -78,8 +78,8 @@ class Collection extends Component {
                    <div className={this.state.mainDiv}>
 
                    <Container className="text-center" fluid={true}>
-          <div className="section-title text-center mb-55"><h2> PRODUCT COLLECTION</h2>
-          <p>Some Of Our Exclusive Collection, You May Like</p>
+          <div className="section-title text-center mb-55"><h2> Izdvojena kolekcija najprodavanijih proizvoda</h2>
+          <p>Vrhunske cene, vrhunski kvalitet!</p>
           </div>
 
      <Row> 

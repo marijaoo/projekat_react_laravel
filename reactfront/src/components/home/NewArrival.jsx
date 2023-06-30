@@ -126,14 +126,14 @@ class NewArrival extends Component {
 
                <div className={this.state.mainDiv}>
           <Container className="text-center" fluid={true}>
-          <div className="section-title text-center mb-55"><h2>NEW ARRIVAL &nbsp;
+          <div className="section-title text-center mb-55"><h2>Novo u ponudi &nbsp;
 
 <a className="btn btn-sm ml-2 site-btn" onClick={this.previous} ><i className="fa fa-angle-left"></i></a>
 &nbsp;
 <a className="btn btn-sm ml-2 site-btn" onClick={this.next} ><i className="fa fa-angle-right"></i></a>
 
           </h2>
-          <p>Some Of Our Exclusive Collection, You May Like</p>
+          <p>Najsvežija ponuda samo na našem sajtu!</p>
           </div>
 
                <Row>

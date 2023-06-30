@@ -1,20 +1,23 @@
 import React, { Component, Fragment } from 'react'
-import {Navbar,Container, Row, Col,Button} from 'react-bootstrap';
+import { Navbar, Container, Row, Col, Button } from 'react-bootstrap';
 import Logo from '../../assets/images/logo.jpg';
 import Bars from '../../assets/images/bars.png';
-import {Link, Redirect} from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import MegaMenuAll from '../home/MegaMenuAll';
- 
-   
- class NavMenuDesktop extends Component {
+import axios from 'axios';
+import AppURL from '../../api/AppURL';
 
-     constructor(){
+
+class NavMenuDesktop extends Component {
+
+     constructor() {
           super();
-          this.state={
+          this.state = {
                SideNavState: "sideNavClose",
                ContentOverState: "ContentOverlayClose",
-               Searchkey:"",
-               SearchRedirectStauts:false
+               Searchkey: "",
+               SearchRedirectStauts: false,
+               cartCount: 0
           }
           this.SearchOnChange = this.SearchOnChange.bind(this);
           this.SeachOnClick = this.SeachOnClick.bind(this);
@@ -25,80 +28,85 @@ import MegaMenuAll from '../home/MegaMenuAll';
           localStorage.clear();
      }
 
-     SearchOnChange(event){
+     componentDidMount() {
+          let product_code = this.props.product_code;
+          axios.get(AppURL.CartCount(product_code)).then((response) => {
+               this.setState({ cartCount: response.data })
+
+          })
+     }
+
+     SearchOnChange(event) {
           let Searchkey = event.target.value;
           // alert(Searchkey);
-          this.setState({Searchkey:Searchkey});
+          this.setState({ Searchkey: Searchkey });
      }
 
-     SeachOnClick(){
-          if(this.state.Searchkey.length>=2){
-               this.setState({SearchRedirectStauts:true})
+     SeachOnClick() {
+          if (this.state.Searchkey.length >= 2) {
+               this.setState({ SearchRedirectStauts: true })
           }
      }
 
-     searchRedirect(){
-          if(this.state.SearchRedirectStauts===true){
-               return <Redirect to={"/productbysearch/"+this.state.Searchkey} />
+     searchRedirect() {
+          if (this.state.SearchRedirectStauts === true) {
+               return <Redirect to={"/productbysearch/" + this.state.Searchkey} />
           }
      }
 
 
 
-     MenuBarClickHandler=()=>{
+     MenuBarClickHandler = () => {
           this.SideNavOpenClose();
      }
 
-     ContentOverlayClickHandler=()=>{
+     ContentOverlayClickHandler = () => {
           this.SideNavOpenClose();
      }
 
 
-     SideNavOpenClose=()=>{
+     SideNavOpenClose = () => {
           let SideNavState = this.state.SideNavState;
           let ContentOverState = this.state.ContentOverState;
-          if(SideNavState==="sideNavOpen"){
-               this.setState({SideNavState:"sideNavClose",ContentOverState:"ContentOverlayClose"})
+          if (SideNavState === "sideNavOpen") {
+               this.setState({ SideNavState: "sideNavClose", ContentOverState: "ContentOverlayClose" })
 
           }
-          else{
-               this.setState({SideNavState:"sideNavOpen",ContentOverState:"ContentOverlayOpen"})
+          else {
+               this.setState({ SideNavState: "sideNavOpen", ContentOverState: "ContentOverlayOpen" })
           }
      }
 
 
      render() {
           let buttons;
-          if(localStorage.getItem('token')){
+          if (localStorage.getItem('token')) {
                buttons = (
                     <div>
- <Link to="/favourite" className="btn"><i className="fa h4 fa-heart"></i><sup><span className="badge text-white bg-danger">3</span></sup>                  
-                   </Link> 
+                         <Link to="/favourite" className="btn"><i className="fa h4 fa-heart"></i><sup><span className="badge text-white bg-danger"></span></sup>
+                         </Link>
 
-                   <Link to="/notification" className="btn"><i className="fa h4 fa-bell"></i><sup><span className="badge text-white bg-danger">5</span></sup>                  
-                   </Link>
-                   
-                   <Link to="/profile" className="h4 btn">PROFILE</Link>
-                   <Link to="/" onClick={this.logout} className="h4 btn">LOGOUT</Link>
-                   
-       <Link to="/cart" className="cart-btn"><i className="fa fa-shopping-cart"></i> 3 Items </Link>
-                    </div> 
+                         <Link to="/profile" className="h4 btn">PROFIL</Link>
+                         <Link to="/" onClick={this.logout} className="h4 btn">ODJAVI SE</Link>
+
+                         <Link to="/cart" className="cart-btn"><i className="fa fa-shopping-cart"></i> {this.state.cartCount} stavki </Link>
+                    </div>
                )
 
-          }else{
+          } else {
                buttons = (
                     <div>
- <Link to="/favourite" className="btn"><i className="fa h4 fa-heart"></i><sup><span className="badge text-white bg-danger">3</span></sup>                  
-                   </Link> 
+                         <Link to="/favourite" className="btn"><i className="fa h4 fa-heart"></i>
+                         </Link>
 
-                   <Link to="/notification" className="btn"><i className="fa h4 fa-bell"></i><sup><span className="badge text-white bg-danger">5</span></sup>                  
-                   </Link>
-                   
-                   <Link to="/login" className="h4 btn">LOGIN</Link>
-                   <Link to="/register" className="h4 btn">REGISTER</Link>
-                   
-       <Link to="/cart" className="cart-btn"><i className="fa fa-shopping-cart"></i> 3 Items </Link>
-                    </div> 
+                         <Link to="/notification" className="btn"><i className="fa h4 fa-bell"></i>
+                         </Link>
+
+                         <Link to="/login" className="h4 btn">PRIJAVI SE</Link>
+                         <Link to="/register" className="h4 btn">REGISTRACIJA</Link>
+
+                         <Link to="/cart" className="cart-btn"><i className="fa fa-shopping-cart"></i> 0 stavki  </Link>
+                    </div>
                )
 
           }
@@ -107,48 +115,48 @@ import MegaMenuAll from '../home/MegaMenuAll';
 
           return (
                <Fragment>
-<div className="TopSectionDown">
-<Navbar fixed={"top"} className="navbar" bg="light">
+                    <div className="TopSectionDown">
+                         <Navbar fixed={"top"} className="navbar" bg="light">
 
-    <Container fluid={"true"} className="fixed-top shadow-sm p-2 mb-0 bg-white">
-         <Row>
-              <Col lg={4} md={4} sm={12} xs={12}>
+                              <Container fluid={"true"} className="fixed-top shadow-sm p-2 mb-0 bg-white">
+                                   <Row>
+                                        <Col lg={4} md={4} sm={12} xs={12}>
 
-              
-              <img onClick={this.MenuBarClickHandler} className="bar-img" src={Bars} />
 
-              <Link to="/"> <img className="nav-logo" src={Logo} /> </Link>
-              </Col>
+                                             <img onClick={this.MenuBarClickHandler} className="bar-img" src={Bars} />
 
-<Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
-     <div className="input-group w-100">
-     <input onChange={this.SearchOnChange} type="text" className="form-control" />
+                                             <Link to="/"> <img className="nav-logo" src={Logo} /> </Link>
+                                        </Col>
 
-     <Button onClick={this.SeachOnClick} type="button" className="btn site-btn"><i className="fa fa-search"> </i> 
-     </Button>
-     </div>
-</Col>
+                                        <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
+                                             <div className="input-group w-100">
+                                                  <input onChange={this.SearchOnChange} type="text" className="form-control" />
 
-              <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
-              
-             {buttons}
+                                                  <Button onClick={this.SeachOnClick} type="button" className="btn site-btn"><i className="fa fa-search"> </i>
+                                                  </Button>
+                                             </div>
+                                        </Col>
 
-              </Col>
+                                        <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
 
-         </Row> 
-   {this.searchRedirect()}
-    </Container>
+                                             {buttons}
 
-  </Navbar>
-  </div>
+                                        </Col>
 
-  <div className={this.state.SideNavState}>
-                <MegaMenuAll />
-          </div>
+                                   </Row>
+                                   {this.searchRedirect()}
+                              </Container>
 
-               <div onClick={this.ContentOverlayClickHandler} className={this.state.ContentOverState}>
+                         </Navbar>
+                    </div>
 
-               </div>
+                    <div className={this.state.SideNavState}>
+                         <MegaMenuAll />
+                    </div>
+
+                    <div onClick={this.ContentOverlayClickHandler} className={this.state.ContentOverState}>
+
+                    </div>
 
 
 

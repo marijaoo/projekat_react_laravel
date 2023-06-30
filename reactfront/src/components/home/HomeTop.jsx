@@ -21,16 +21,17 @@ class HomeTop extends Component {
 
      componentDidMount() {
           axios.get(AppURL.AllCategoryDetails).then(response => {
-               this.setState({
-                    SliderData: response.data, isLoading: "d-none",
-                    mainDiv: ""
-               });
+               this.setState({ MenuData: response.data });
 
           }).catch(error => {
 
           });
           axios.get(AppURL.AllSlider).then(response => {
-               this.setState({ SliderData: response.data });
+
+               this.setState({
+                    SliderData: response.data, isLoading: "d-none",
+                    mainDiv: ""
+               });
 
           }).catch(error => {
 
