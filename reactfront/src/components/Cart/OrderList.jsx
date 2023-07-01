@@ -67,7 +67,7 @@ export class OrderList extends Component {
         return (
             <Fragment>
                 <Container>
-                    <div className="section-title text-center mb-55"><h2>Order History </h2>
+                    <div className="section-title text-center mb-55"><h2>Istorija poručivanja</h2>
 
                     </div>
 

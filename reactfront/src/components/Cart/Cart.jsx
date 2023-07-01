@@ -190,7 +190,7 @@ class Cart extends Component {
           return (
                <Fragment>
                     <Container fluid={true}>
-                         <div className="section-title text-center mb-55"><h2>Product Cart List</h2>
+                         <div className="section-title text-center mb-55"><h2>Lista kupovne korpe</h2>
                          </div>
                          <Row>
                               <Col className="p-1" lg={7} md={7} sm={12} xs={12} >
@@ -202,36 +202,36 @@ class Cart extends Component {
                                              <div className="container-fluid ">
                                                   <div className="row">
                                                        <div className="col-md-12 p-1  col-lg-12 col-sm-12 col-12">
-                                                            <h5 className="Product-Name text-danger">Total Due: {totalPriceSum}  $</h5>
+                                                            <h5 className="Product-Name text-danger">Zaduženje kupovne korpe: {totalPriceSum}  $</h5>
                                                        </div>
                                                   </div>
                                                   <div className="row">
                                                        <div className="col-md-12 p-1 col-lg-12 col-sm-12 col-12">
-                                                            <label className="form-label">Choose City</label>
+                                                            <label className="form-label">Odaberi grad</label>
                                                             <select onChange={this.cityOnChange} className="form-control">
-                                                                 <option value="" defaultValue={"Kraljevo"}>Choose</option>
-                                                                 <option value="Kraljevo">Kraljevo</option>
-                                                                 <option value="Seravica">Seravica </option>
-                                                                 <option value="Beograd">Beograd </option>
+                                                                 <option>Odaberi...</option>
+                                                                 <option value="Beograd">Beograd</option>
+                                                                 <option value="Novi Sad">Novi Sad </option>
                                                                  <option value="Valjevo">Valjevo </option>
-                                                                 <option value="Uzice">Uzice </option>
-                                                                 <option value="Leskovac">Leskovac  </option>
+                                                                 <option value="Čačak">Čačak </option>
+                                                                 <option value="Irig">Irig </option>
+                                                                 <option value="Subotica">Subotica  </option>
                                                             </select>
                                                        </div>
                                                        <div className="col-md-12 p-1 col-lg-12 col-sm-12 col-12">
-                                                            <label className="form-label">Choose Payment Method</label>
+                                                            <label className="form-label">Metoda plaćanja</label>
                                                             <select onChange={this.paymentMethodOnChange} className="form-control">
-                                                                 <option value="">Choose</option>
-                                                                 <option value="Cash On Delivery">Cash On Delivery</option>
-                                                                 <option value="Cash On Delivery">Stripe</option>
+                                                                 <option value="">Odaberi...</option>
+                                                                 <option value="Cash On Delivery">Gotovina</option>
+                                                                 <option value="Stripe">Stripe</option>
                                                             </select>
                                                        </div>
                                                        <div className="col-md-12 p-1 col-lg-12 col-sm-12 col-12">
-                                                            <label className="form-label">Your Name</label>
+                                                            <label className="form-label">Tvoje ime</label>
                                                             <input onChange={this.nameOnChange} className="form-control" type="text" placeholder="" />
                                                        </div>
                                                        <div className="col-md-12 p-1 col-lg-12 col-sm-12 col-12">
-                                                            <label className="form-label">Delivery Address</label>
+                                                            <label className="form-label">Adresa za dostavu</label>
                                                             <textarea onChange={this.addressOnChange} rows={2} className="form-control" type="text" placeholder="" />
                                                        </div>
                                                        <div className="col-md-12 p-1 col-lg-12 col-sm-12 col-12">
